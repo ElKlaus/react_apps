@@ -23,7 +23,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 150px;
+  min-height: 80px;
 }
 
 .nav__menu {
@@ -61,4 +61,21 @@ body, html {
   align-items: center;
   justify-content: center;
   height: 50vh;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.login__form input {
+  height: 30px;
+  text-align: center;
+}
+
+.button {
+  min-height: 40px;
+  min-width: 60px;
 }

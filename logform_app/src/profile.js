@@ -22,7 +22,7 @@ class ProfilePage extends React.Component {
     return (
       <>
         {!isLogged && (<Navigate to='/login' replace={true} />)}
-        <div className="profile"><button onClick={this.handleClick}>Выйти</button></div>
+        <div className="profile "><button className='button' onClick={this.handleClick}>Выйти</button></div>
       </>
     )
   }

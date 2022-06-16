@@ -48,18 +48,18 @@ class LoginForm extends React.Component {
     const isLogged = localStorage.getItem('isLogged') === 'isLogged';
 
     return (
-      <>
+      <div className='login'>
         {isLogged && (<Navigate to='/profile' replace={true} />)}
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit} className="login__form">
           <label>
             <input type="text" name="user" placeholder="Имя пользователя" onChange={this.handleChangeUser}/>
           </label>
           <label>
             <input type="password" name="password" placeholder="Пароль"  onChange={this.handleChangePassword}/>
           </label>
-          <button type="submit">Войти</button>
+          <button type="submit" className='button'>Войти</button>
         </form>
-      </>
+      </div>
     );
   }
 };
