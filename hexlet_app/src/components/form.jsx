@@ -36,12 +36,20 @@ export default class Form extends React.Component {
         <br />
         <label htmlFor="">
           Number of guests
+          <br />
           <input
             name="numberOfGests"
             type="number"
             value={this.state.numberOfGuests}
             onChange={this.handleInputChange} />
         </label>
+        <select name="" id="" multiple={true} value={['2', '4']}>
+          <option value="">Some Val</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
       </form>
     )
   }
