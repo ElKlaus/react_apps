@@ -32,7 +32,7 @@ export default class Form extends React.Component {
       <form onSubmit={this.handleSubmit} className="form">
         <label htmlFor="text">
           Имя:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" name="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <textarea name="" id="" cols="30" rows="10" onChange={this.onChange} value={this.state.text}></textarea>
         <input type="submit" value="Отправить" />
