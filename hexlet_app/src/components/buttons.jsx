@@ -1,29 +1,42 @@
 import React from 'react';
 import cn from 'classnames';
-import update from 'immutability-helper'
+// import update from 'immutability-helper'
 
 export default class Buttons extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleClass: true,
+    }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+
+    this.setState(({ toggleClass }) => ({ toggleClass: !toggleClass }));
+  };
 
   render() {
-    const divStyle = {
-      color: 'red',
-      fontSize: '50px',
-    };
+    const { toggleClass } = this.state;
 
-    const myData = {
-      x: { y: {z: 5} },
-      a: { b: [1, 2] },
-    };
+    console.log(toggleClass);
 
-    const newData = update(myData, {
-      x: { y: {z: { $set: 7 } } },
-      a: { b: { $push: [9] } },
+    const textStyle = cn({
+      divStyle: toggleClass,
+      divNewStyle: !toggleClass,
     })
 
-    
-    console.log(newData);
-  
-
-    return <div style={divStyle}>Hello World</div> 
+    return (
+      <React.Fragment>
+        <div className="">        
+          <p>
+            <a href="/test" className="btn btn-primary" data-bs-toggle="collapse" role="button" onClick={this.handleClick}>Recolor</a>
+          </p>
+        </div>
+        <div className={textStyle}>Hello World</div>
+      </React.Fragment>
+    )
   };
 };

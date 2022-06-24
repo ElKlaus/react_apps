@@ -6,6 +6,7 @@ import Buttons from './components/buttons';
 import Collapse from './components/collapse';
 import Form from './components/form';
 import List from './components/list';
+import Log from './components/log';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
 
     return (
       <div  className='main'>
+        <Log />
         <Buttons />
         <Collapse text={'Collapse me'}/>
         <Form text="loremru" />

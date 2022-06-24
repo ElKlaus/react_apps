@@ -9,7 +9,9 @@ export default class Collapse extends React.Component {
     }
   };
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
+
     this.setState(({ opened }) => ({ opened: !opened }))
   }
 
@@ -23,7 +25,7 @@ export default class Collapse extends React.Component {
     return (
       <div>
         <p>
-          <a href="#" className="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded={opened} onClick={this.handleClick.bind(this)}>Link with href</a>
+          <a href="/test" className="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded={opened} onClick={this.handleClick.bind(this)}>Link with href</a>
         </p>
         <div className={collapseClass}>
           <div className="card card-body">
