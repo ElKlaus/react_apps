@@ -20,9 +20,9 @@ class App extends React.Component {
       <div  className='main'>
         <Log />
         <Buttons />
-        <Collapse text={'Collapse me'}/>
+        <Collapse text={'Collapse me'} />
         <Form text="loremru" />
-        <List data={definitions}/>
+        <List items={[1, 2, 3, 4, 5]} />
       </div>
     );
   }

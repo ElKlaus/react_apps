@@ -1,23 +1,42 @@
 import React from "react";
 import cn from "classnames";
 
-export default class List extends React.Component {
+class Item extends React.Component {
   render() {
-    const { data } = this.props;
-    if (data.length === 0) {
-      return null;
-    }
-
-    const listItem = data.map(({ dt, dd, id }) => 
-    <React.Fragment key={id}>
-      <dt>{dt}</dt>
-      <dd>{dd}</dd>
-    </React.Fragment>);
+    const { value, onRemove } = this.props;
 
     return (
-      <dl>
-        {listItem}
-      </dl>      
+      <li>
+        <a href="#" onClick={onRemove(value)}>{value}</a>
+      </li>
+    )
+  }
+}
+
+export default class List extends React.Component {
+  constructor(props) {
+    super(props);
+    const { items } = this.props;
+    this.state = { items };
+  }
+
+  handleRemove = (value) => (e) => {
+    e.preventDefault();
+
+    const newItems = this.state.items.filter(item => item !== value);
+
+    this.setState({ items: newItems })
+  }
+
+  render() {
+    const { items } = this.state;
+
+    return (
+      <ul>
+        {items.map(i => 
+          <Item onRemove={this.handleRemove} value={i} />
+        )}
+      </ul>
     )
   }
 }
