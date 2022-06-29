@@ -1,40 +1,45 @@
 import React from 'react';
 import cn from 'classnames';
+import { ThemeContext, themes } from './theme-context';
+import ThemedButton from './themed-button';
+
 // import update from 'immutability-helper'
+
+function Toolbar(props) {
+  return (
+    <ThemedButton onClick={props.changeTheme}>
+      Change Theme
+    </ThemedButton>
+  )
+}
 
 export default class Buttons extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggleClass: true,
-    }
+      theme: themes.ligth,
+    };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.toggleTheme = () => {
+      this.setState(state => ({
+        theme:
+        state.theme === themes.dark
+          ? themes.ligth
+          : themes.dark,
+      }));
+    }
   }
 
-  handleClick(e) {
-    e.preventDefault();
-
-    this.setState(({ toggleClass }) => ({ toggleClass: !toggleClass }));
-  };
-
   render() {
-    const { toggleClass } = this.state;
-
-    const textStyle = cn({
-      divStyle: toggleClass,
-      divNewStyle: !toggleClass,
-    })
-
     return (
-      <React.Fragment>
-        <div className="">        
-          <p>
-            <a href="/test" className="btn btn-primary" data-bs-toggle="collapse" role="button" onClick={this.handleClick}>Recolor</a>
-          </p>
-        </div>
-        <div className={textStyle}>Hello World</div>
-      </React.Fragment>
+      <div>
+        <ThemeContext.Provider value={this.state.theme}>
+          <Toolbar changeTheme={this.toggleTheme} />
+        </ThemeContext.Provider>
+        <section>
+          <ThemedButton>Click me</ThemedButton>
+        </section>
+      </div>
     )
-  };
+  }
 };
