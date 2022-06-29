@@ -1,16 +1,14 @@
 import React from "react";
 import cn from "classnames";
 
-class Item extends React.Component {
-  render() {
-    const { value, onRemove } = this.props;
+const Item = (props) => {
+  const { value, onRemove } = props;
 
-    return (
-      <li>
-        <a href="#" onClick={onRemove(value)}>{value}</a>
-      </li>
-    )
-  }
+  return (
+    <li>
+      <a href="#" onClick={onRemove(value)}>{value}</a>
+    </li>
+  );
 }
 
 export default class List extends React.Component {
@@ -34,7 +32,7 @@ export default class List extends React.Component {
     return (
       <ul>
         {items.map(i => 
-          <Item onRemove={this.handleRemove} value={i} />
+          <Item onRemove={this.handleRemove} value={i} key={i} />
         )}
       </ul>
     )

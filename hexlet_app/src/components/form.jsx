@@ -1,5 +1,6 @@
 import React from "react";
 import cn from "classnames";
+import Editor from "./editor";
 
 export default class Form extends React.Component {
   constructor(prop) {
@@ -19,7 +20,7 @@ export default class Form extends React.Component {
 
   handleSubmit(event) {
     alert('Отправленное имя: ' + this.state.value);
-    
+
     event.preventDefault(event);
   }
 
@@ -35,10 +36,9 @@ export default class Form extends React.Component {
           <input type="text" name="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <textarea name="" id="" cols="30" rows="10" onChange={this.onChange} value={this.state.text}></textarea>
+        <Editor text="I am intered in textarea component" />
         <input type="submit" value="Отправить" />
       </form>
     )
   }
-
-  
 }

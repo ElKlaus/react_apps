@@ -21,8 +21,6 @@ export default class Buttons extends React.Component {
   render() {
     const { toggleClass } = this.state;
 
-    console.log(toggleClass);
-
     const textStyle = cn({
       divStyle: toggleClass,
       divNewStyle: !toggleClass,

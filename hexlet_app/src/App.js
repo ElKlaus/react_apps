@@ -7,6 +7,7 @@ import Collapse from './components/collapse';
 import Form from './components/form';
 import List from './components/list';
 import Log from './components/log';
+import Card from './components/card';
 
 class App extends React.Component {
 
@@ -16,8 +17,17 @@ class App extends React.Component {
       { dt: 'another term', dd: 'another description', id: 2 },
     ];
 
+    const vdom = (
+      <Card>
+        <Card.Body>
+          <Card.Title>What is love? Baby don't hurt me. No more!</Card.Title>
+        </Card.Body>
+      </Card>
+    );    
+
     return (
       <div  className='main'>
+        {vdom}
         <Log />
         <Buttons />
         <Collapse text={'Collapse me'} />

@@ -6,28 +6,29 @@ export default class Log extends React.Component {
     super(props);
     this.state = {
       items: [],
-    }
+    };
   }
 
   handleCount = (value) => {
     const { items } = this.state;
     const currentValue = get(items, [0, 'value'], 0) + value;
-    const current = { id: uniqueId(), value: currentValue};
-  
+    const current = { id: uniqueId(), value: currentValue };
+
     this.setState({ items: [current, ...items] });
   }
 
   handleDec = () => this.handleCount(-1);
-
   handleInc = () => this.handleCount(1);
 
   handleRemove = (currentId) => () => {
     const { items } = this.state;
-    this.setState({ items: items.filter(({ id }) => id !== currentId) });
+
+    this.setState({ items: items.filter(({ id }) => id !== currentId) })
   }
 
-  renderLog() {
+  renderList() {
     const { items } = this.state;
+
     if (items.length === 0) {
       return null;
     }
@@ -35,22 +36,22 @@ export default class Log extends React.Component {
     return (
       <div className="list-group">
         {items.map(({ id, value }) => (
-          <button className="list-group-item list-group-item-action" key={id} onClick={this.handleRemove(id)}>
+          <button type="button" className="list-group-item list-group-item-action" key={id} onClick={this.handleRemove(id)}>
             {value}
           </button>
         ))}
-      </div>      
-    );
+      </div>
+    )
   }
 
   render() {
     return (
-      <div className="log">
-        <div className="btn-group font-monospace" role="group">
+      <div>
+        <div className="btn-group font-monospase" role="group">
           <button type="button" className="btn btn-outline-success" onClick={this.handleInc}>+</button>
           <button type="button" className="btn btn-outline-danger" onClick={this.handleDec}>-</button>
         </div>
-        {this.renderLog()}
+        {this.renderList()}
       </div>
     )
   }
