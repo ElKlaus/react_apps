@@ -32,7 +32,7 @@ class App extends React.Component {
         <Buttons />
         <Collapse text={'Collapse me'} />
         <Form text="loremru" />
-        <List items={[1, 2, 3, 4, 5]} />
+        <List  items={[1, 2, 3, 4, 5, 6]}/>
       </div>
     );
   }

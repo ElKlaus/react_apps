@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 
 const Item = (props) => {
   const { value, onRemove } = props;
@@ -8,14 +7,14 @@ const Item = (props) => {
     <li>
       <a href="#" onClick={onRemove(value)}>{value}</a>
     </li>
-  );
+  )
 }
 
 export default class List extends React.Component {
   constructor(props) {
     super(props);
     const { items } = this.props;
-    this.state = { items };
+    this.state = { items }
   }
 
   handleRemove = (value) => (e) => {
@@ -23,7 +22,7 @@ export default class List extends React.Component {
 
     const newItems = this.state.items.filter(item => item !== value);
 
-    this.setState({ items: newItems })
+    this.setState({ items: newItems });
   }
 
   render() {
@@ -31,10 +30,14 @@ export default class List extends React.Component {
 
     return (
       <ul>
-        {items.map(i => 
-          <Item onRemove={this.handleRemove} value={i} key={i} />
+        {items.map(i =>
+          <Item onRemove={this.handleRemove} value={i} />
         )}
       </ul>
     )
   }
 }
+
+// List.defaultProps = {
+//   items: [1, 2, 3, 4, 5, 6],
+// }
