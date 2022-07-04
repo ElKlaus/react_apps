@@ -31,7 +31,7 @@ export default class List extends React.Component {
     return (
       <ul>
         {items.map(i =>
-          <Item onRemove={this.handleRemove} value={i} />
+          <Item onRemove={this.handleRemove} key={i} value={i} />
         )}
       </ul>
     )
