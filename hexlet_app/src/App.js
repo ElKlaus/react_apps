@@ -8,6 +8,8 @@ import Form from './components/form';
 import List from './components/list';
 import Log from './components/log';
 import Card from './components/card';
+import Autocomplete from './components/autocomplete';
+import Clock from './components/clock';
 
 class App extends React.Component {
 
@@ -27,6 +29,8 @@ class App extends React.Component {
 
     return (
       <div  className='main'>
+        <Clock />
+        {/* <Autocomplete /> */}
         {vdom}
         <Log />
         <Buttons />
