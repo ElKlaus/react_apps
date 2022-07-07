@@ -25,6 +25,14 @@ export default class List extends React.Component {
     this.setState({ items: newItems });
   }
 
+  componentDidMount() {
+    console.log('I am mounted')
+  }
+
+  componentWillUnmount() {
+    console.log('I am unmounted')
+  }
+
   render() {
     const { items } = this.state;
 
