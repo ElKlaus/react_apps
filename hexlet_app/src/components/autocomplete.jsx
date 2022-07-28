@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 
-export default class Autocomplete React.Component {
+export default class Autocomplete extends React.Component {
   constructor(props) {
     super(props);
     this.state = { countries: [], text: ''};
