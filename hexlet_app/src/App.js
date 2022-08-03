@@ -29,14 +29,7 @@ class App extends React.Component {
 
     return (
       <div  className='main'>
-        <Clock />
-        {/* <Autocomplete /> */}
         {vdom}
-        <Log />
-        <Buttons />
-        <Collapse text={'Collapse me'} />
-        <Form text="loremru" />
-        <List  items={[1, 2, 3, 4, 5, 6]}/>
       </div>
     );
   }

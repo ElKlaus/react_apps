@@ -4,19 +4,24 @@ import React from 'react';
 export default class Autocomplete extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { countries: [], text: ''};
+    this.state = {
+      countries: [],
+      test: '',
+    }
   }
 
-  HashChangeText = async ({ target: { value }}) => {
+  handleChangeText = async({ target: { value } }) => {
     if (value === '') {
       this.setState({ text: '', countries: [] });
 
-      return;
+      return
     }
 
     this.setState({ text: value });
-    const res = await axios.get('/countries', { params: { term: value }});
-    this.setState({ countries: res.data })
+
+    const res = await axios.get('/countries', { params: { term: value } });
+
+    this.setState({ countries: res.data });
   }
 
   renderCountries() {
@@ -24,9 +29,9 @@ export default class Autocomplete extends React.Component {
 
     return (
       <ul>
-        {countries.map((c) => <li key={c}>{c}</li>)}
+          {countries.map((c) => <li key={c}>{c}</li>)}
       </ul>
-    );
+    )
   }
 
   render() {
@@ -34,10 +39,10 @@ export default class Autocomplete extends React.Component {
 
     return (
       <div>
-        <form>
+        <form action="">
           <input
             type="text"
-            onChange={this.HashChangeText}
+            onChange={this.handleChangeText}
             value={text}
             className="form-control"
             placeholder='Enter Country'
@@ -45,6 +50,6 @@ export default class Autocomplete extends React.Component {
         </form>
         {countries.length > 0 && this.renderCountries()}
       </div>
-    );
+    )
   }
 }
