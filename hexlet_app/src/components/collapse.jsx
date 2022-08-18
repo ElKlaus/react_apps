@@ -6,30 +6,24 @@ export default class Collapse extends React.Component {
     super(props);
     this.state = {
       opened: props.opened,
-      text: props.text,
-    }
+    };
   }
 
-  handleClick = (e) => {
-    e.preventDefault();
-
-    this.setState(({ opened }) => ({opened: !opened}))
-  }
+  handleClick = () => this.setState(({ opened, aria }) => ({ opened: !opened, aria: !aria }));
 
   render() {
-    const { text, opened } = this.state;
-    const collapseStyle = cn('collapse', {
+    const { text } = this.props;
+    const { opened } = this.state;
+    const collapseClass = cn('collapse', {
       show: opened,
     });
-
-    console.log(opened);
 
     return (
       <div>
         <p>
-          <a className="btn btn-primary" data-bs-toggle="collapse" href="#" role="button" aria-expanded={opened} onClick={this.handleClick.bind(this)}>Link down href</a>
+          <a href="#top" className="btn btn-primary" data-bs-toggle="collapse" role="button" aria-expanded={opened} onClick={this.handleClick}>Link with href</a>
         </p>
-        <div className={collapseStyle}>
+        <div className={collapseClass}>
           <div className="card card-body">
             {text}
           </div>
@@ -41,4 +35,4 @@ export default class Collapse extends React.Component {
 
 Collapse.defaultProps = {
   opened: true,
-};
+}

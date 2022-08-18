@@ -1,45 +1,35 @@
-import React from 'react';
-import cn from 'classnames';
-import { ThemeContext, themes } from './theme-context';
-import ThemedButton from './themed-button';
-
-// import update from 'immutability-helper'
-
-function Toolbar(props) {
-  return (
-    <ThemedButton onClick={props.changeTheme}>
-      Change Theme
-    </ThemedButton>
-  )
-}
+import React from "react";
+import cn from "classnames";
 
 export default class Buttons extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      theme: themes.ligth,
-    };
-
-    this.toggleTheme = () => {
-      this.setState(state => ({
-        theme:
-        state.theme === themes.dark
-          ? themes.ligth
-          : themes.dark,
-      }));
-    }
+    this.state = { count: 1, primary: false };
   }
 
+  onIncrement = () => {
+    this.setState(({ count }) => ({ count: count + 1 }));
+  };
+
+  onChangeClass = () => {
+    this.setState(({ primary }) => ({ primary: !primary }));
+  };
+
   render() {
+    const buttonClass = cn([
+      'btn',
+      this.state.primary ? 'btn-primary' : 'btn-secondary'
+    ]);
+
     return (
       <div>
-        <ThemeContext.Provider value={this.state.theme}>
-          <Toolbar changeTheme={this.toggleTheme} />
-        </ThemeContext.Provider>
-        <section>
-          <ThemedButton>Click me</ThemedButton>
-        </section>
+        <button className="btn btn-secondary m-3" onClick={this.onIncrement}>
+          count: {this.state.count}
+        </button>
+        <button className={buttonClass} onClick={this.onChangeClass}>
+          button
+        </button>
       </div>
     )
   }
-};
+}

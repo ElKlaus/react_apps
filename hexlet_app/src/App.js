@@ -30,6 +30,8 @@ class App extends React.Component {
     return (
       <div  className='main'>
         {vdom}
+        <Collapse />
+        <Buttons />
       </div>
     );
   }
