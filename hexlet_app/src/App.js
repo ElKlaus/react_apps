@@ -10,6 +10,7 @@ import Log from './components/log';
 import Card from './components/card';
 import Autocomplete from './components/autocomplete';
 import Clock from './components/clock';
+import DefinitionList from './components/definition_list';
 
 class App extends React.Component {
 
@@ -25,13 +26,14 @@ class App extends React.Component {
           <Card.Title>What is love? Baby don't hurt me. No more!</Card.Title>
         </Card.Body>
       </Card>
-    );    
+    );
 
     return (
       <div  className='main'>
         {vdom}
         <Collapse />
         <Buttons />
+        <DefinitionList data={definitions}/>
       </div>
     );
   }
