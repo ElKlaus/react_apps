@@ -34,6 +34,7 @@ class App extends React.Component {
         <Collapse />
         <Buttons />
         <DefinitionList data={definitions}/>
+        <Log />
       </div>
     );
   }

@@ -13,6 +13,7 @@ export default class DefinitionList extends React.Component {
         <dd>{dd}</dd>
       </React.Fragment>
     ))
+
     return (
       <dl>
         {tags}
