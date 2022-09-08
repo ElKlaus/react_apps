@@ -14,7 +14,10 @@ export default class Editor extends React.Component {
 
   render() {
     return (
-      <textarea onChange={this.onChange} value={this.state.text}></textarea>
+      <textarea
+        onChange={this.onChange}
+        value={this.state.text}
+      />
     )
   }
 }

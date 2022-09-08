@@ -11,6 +11,7 @@ import Card from './components/card';
 import Autocomplete from './components/autocomplete';
 import Clock from './components/clock';
 import DefinitionList from './components/definition_list';
+import Editor from './components/editor';
 
 class App extends React.Component {
 
@@ -31,6 +32,7 @@ class App extends React.Component {
     return (
       <div  className='main'>
         {vdom}
+        <Editor text="initial text"/>
         <Collapse />
         <Buttons />
         <DefinitionList data={definitions}/>
