@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default class DefinitionList extends React.Component {
   render() {
     const { data } = this.props;
+
     if (data.length === 0) {
       return null;
     }
