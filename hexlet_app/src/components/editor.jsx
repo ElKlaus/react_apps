@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default class Editor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state ={
       text: this.props.text,
     }
   }
@@ -13,6 +13,10 @@ export default class Editor extends React.Component {
   }
 
   render() {
+    const { text } = this.state;
+
+    console.log(text);
+
     return (
       <textarea
         onChange={this.onChange}
