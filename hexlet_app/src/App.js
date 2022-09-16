@@ -21,6 +21,8 @@ class App extends React.Component {
       { dt: 'another term', dd: 'another description', id: 2 },
     ];
 
+    const text = 'collapse me';
+
     const vdom = (
       <Card>
         <Card.Body>
@@ -33,7 +35,7 @@ class App extends React.Component {
       <div  className='main'>
         {vdom}
         <Editor text="initial text"/>
-        <Collapse />
+        <Collapse text={text} opened={false}/>
         <Buttons />
         <DefinitionList data={definitions}/>
         <Log />
