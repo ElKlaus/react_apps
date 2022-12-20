@@ -4,7 +4,10 @@ import cn from "classnames";
 export default class Buttons extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { count: 1, primary: false };
+    this.state = {
+      count: 1,
+      primary: false,
+    };
   }
 
   onIncrement = () => {
@@ -18,18 +21,13 @@ export default class Buttons extends React.Component {
   render() {
     const buttonClass = cn([
       'btn',
-      this.state.primary ? 'btn-primary' : 'btn-secondary'
+      this.state.primary ? 'btn-primary' : 'btn - secondary'
     ]);
-
-    return (
-      <div>
-        <button className="btn btn-secondary m-3" onClick={this.onIncrement}>
-          count: {this.state.count}
-        </button>
-        <button className={buttonClass} onClick={this.onChangeClass}>
-          button
-        </button>
-      </div>
-    )
+    return <div>
+      <button className="btn btn-secondary m-3" onClick={this.onIncrement}>
+        count: {this.state.count}
+      </button>
+      <button className={buttonClass} onClick={this.onChangeClass}>button</button>
+    </div>
   }
 }
