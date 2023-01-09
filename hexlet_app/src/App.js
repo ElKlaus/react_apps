@@ -12,6 +12,7 @@ import Autocomplete from './components/autocomplete';
 import Clock from './components/clock';
 import DefinitionList from './components/definition_list';
 import Editor from './components/editor';
+import ListCollback from './components/colback_list';
 
 class App extends React.Component {
 
@@ -34,6 +35,7 @@ class App extends React.Component {
     return (
       <div  className='main'>
         {vdom}
+        <ListCollback items={[1,2,3,4,5]} />
         <Editor text="initial text"/>
         <Collapse text={text} opened={false}/>
         <Buttons />
