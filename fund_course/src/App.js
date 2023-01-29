@@ -1,18 +1,33 @@
-import React from "react";
-import './styles/App.css';
-import {BrowserRouter, Route, Link, Switch, Redirect} from "react-router-dom"
-import About from "./pages/About";
-import Posts from "./pages/Post";
-import { Navbar } from "./components/UI/Navbar/Navbar";
-import { Error } from "./pages/Error";
+import React, {useState, useEffect} from "react";
+import { BrowserRouter } from "react-router-dom";
 import { AppRouter } from "./components/AppRouter";
+import { Navbar } from "./components/UI/Navbar/Navbar";
+import { AuthContext } from "./context/context";
+import './styles/App.css';
 
 function App() {
+  const [isAuth, setIsAuth] = useState(true); //Не работает с false. Разобрать повторно создание авторизации
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem('auth')) {
+      setIsAuth(true)
+    }
+
+    setLoading(false);
+  }, []);
+
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <AppRouter/>
-    </BrowserRouter>
+    <AuthContext.Provider value={{
+      isAuth,
+      setIsAuth,
+      isLoading,
+    }}>
+      <BrowserRouter>
+        <Navbar/>
+        <AppRouter/>
+      </BrowserRouter>
+    </AuthContext.Provider>
   )
 }
 
