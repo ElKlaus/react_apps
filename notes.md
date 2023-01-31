@@ -3,3 +3,4 @@
 Разница между классовым и функциональным компонентом
 async, await
 useRef()
+"./node_modules/.bin/webpack serve"
