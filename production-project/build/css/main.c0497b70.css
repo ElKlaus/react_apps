@@ -1,0 +1,21 @@
+/*!*********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/Counter.module.scss ***!
+  \*********************************************************************************************************************************************************/
+.src-components-Counter-module__btn {
+  padding: 20px;
+  color: green;
+}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY3NzL21haW4uYzA0OTdiNzAuY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBO0VBQ0U7RUFDQTtBQUNGLEM7Ozs7QUNIQTtFQUNFO0VBQ0E7RUFDQTtBQUNGOztBQUVBO0VBQ0U7QUFDRixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vcHJvZHVjdGlvbi1wcm9qZWN0Ly4vc3JjL2NvbXBvbmVudHMvQ291bnRlci5tb2R1bGUuc2NzcyIsIndlYnBhY2s6Ly9wcm9kdWN0aW9uLXByb2plY3QvLi9zcmMvaW5kZXguc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIuYnRuIHtcclxuICBwYWRkaW5nOiAyMHB4O1xyXG4gIGNvbG9yOiBncmVlbjtcclxufSIsIioge1xyXG4gIG1hcmdpbjogMDtcclxuICBwYWRkaW5nOiAwO1xyXG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbn1cclxuXHJcbi5hcHAge1xyXG4gIGZvbnQtc2l6ZTogMzBweDtcclxufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/
