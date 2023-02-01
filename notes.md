@@ -4,3 +4,4 @@
 async, await
 useRef()
 "./node_modules/.bin/webpack serve"
+Promise
