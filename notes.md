@@ -8,3 +8,4 @@ useMemo()
 Promise
 Export enum
 Задание типов в TypeScript
+useEffect

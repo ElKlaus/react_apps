@@ -1,2 +1,8 @@
 node_modules
 /production-project/node_modules
+/react-testing-lib-example/node_modules
+/mmc_artem_bot/node_modules
+/logform_app/node_modules
+/hexlet_app/node_modules
+/fund_course/node_modules
+/redux_course/node_modules
