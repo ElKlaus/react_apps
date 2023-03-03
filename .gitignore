@@ -6,3 +6,5 @@ node_modules
 /hexlet_app/node_modules
 /fund_course/node_modules
 /redux_course/node_modules
+/redux_typescript_course/node_modules
+/redux_toolkit/node_modules
