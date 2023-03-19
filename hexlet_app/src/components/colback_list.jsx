@@ -29,7 +29,7 @@ export default class ListCollback extends React.Component {
     return (
       <ul>
         {items.map(i => 
-          <Item onRemove={this.handleRemove} value={i}/>
+          <Item id={new Date()} onRemove={this.handleRemove} value={i}/>
         )}
       </ul>
     );

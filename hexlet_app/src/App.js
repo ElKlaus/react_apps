@@ -4,6 +4,7 @@ import React from 'react';
 import { Navigate } from "react-router-dom";
 import Buttons from './components/buttons';
 import Collapse from './components/collapse';
+import CollapseFunc from './func_components/CollapseFunc';
 import Form from './components/form';
 import List from './components/list';
 import Log from './components/log';
@@ -34,13 +35,15 @@ class App extends React.Component {
 
     return (
       <div  className='main'>
+        <Autocomplete />
         {vdom}
-        <ListCollback items={[1,2,3,4,5]} />
-        <Editor text="initial text"/>
+        {/* <ListCollback items={[1,2,3,4,5]} /> */}
+        {/* <Editor text="initial text"/> */}
         <Collapse text={text} opened={false}/>
         <Buttons />
         <DefinitionList data={definitions}/>
         <Log />
+
       </div>
     );
   }

@@ -19,7 +19,8 @@ export default class Autocomplete extends React.Component {
 
     this.setState({ text: value });
 
-    const res = await axios.get('/countries', { params: { term: value } });
+    const res = await axios.get('https://jsonplaceholder.typicode.com/users', { params: { user: value } });
+    console.log(res.data.name)
 
     this.setState({ countries: res.data });
   }
